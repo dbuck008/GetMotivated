@@ -6,17 +6,20 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient">
 
     <TextView
         android:text="quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_quote"
+        android:layout_marginTop="36dp"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:textSize="20sp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,5 +43,26 @@
         android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_upVote"
+        android:src="@drawable/item_add"
+        android:layout_alignTop="@+id/b_next"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_downvote"
+        android:src="@drawable/item_delete"
+        android:layout_alignRight="@+id/tv_author"
+        android:layout_alignEnd="@+id/tv_author"
+        android:layout_marginRight="26dp"
+        android:layout_alignBottom="@+id/ib_upVote"
+        android:layout_alignTop="@+id/ib_upVote" />
 
 </RelativeLayout>

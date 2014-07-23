@@ -12,9 +12,9 @@ public class Quote {
     private static final String TAG = "Quote";
 
     private static List<Quote> quotes = new ArrayList<Quote>();
-    String quote = "";
-    String author = "";
-    int weight = 0;
+    private String quote = "";
+    private String author = "";
+    private int weight = 0;
 
     public Quote(String q, String a) {
         q = q.trim().replace("\"", "'");
@@ -132,5 +132,9 @@ public class Quote {
     public String getAuthor() { return this.author; }
 
     public String getQuoteString() { return this.quote; }
+
+    public int getWeight() { return this.weight; }
+
+    public void addWeight(int change) { this.weight += change; }
 
 }

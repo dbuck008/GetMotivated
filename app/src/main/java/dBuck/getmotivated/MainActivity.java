@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
@@ -14,21 +16,32 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     TextView quote_textview;
     TextView author_textview;
     Button next_button;
+    ImageButton upVote_imagebutton;
+    ImageButton downVote_imagebutton;
+    Quote quote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
+    }
+
+    public void init()
+    {
         Quote.initQuotes();
         quote_textview = (TextView) findViewById(R.id.tv_quote);
         author_textview =(TextView) findViewById(R.id.tv_author);
         next_button = (Button) findViewById(R.id.b_next);
+        upVote_imagebutton = (ImageButton) findViewById(R.id.ib_upVote);
+        downVote_imagebutton = (ImageButton) findViewById(R.id.ib_downvote);
+        upVote_imagebutton.setOnClickListener(this);
+        downVote_imagebutton.setOnClickListener(this);
         next_button.setOnClickListener(this);
         Quote quote = Quote.getRandomQuote();
-        quote_textview.setText(quote.getQuoteString());
-        author_textview.setText(quote.getAuthor());
+        quote_textview.setText("\"" + quote.getQuoteString() + "\"");
+        author_textview.setText("-" + quote.getAuthor());
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,19 +56,33 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id)
+        {
+            case R.id.action_settings:
+                break;
+            case R.id.aboutUs:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.b_next)
+        switch (v.getId())
         {
-            Quote quote = Quote.getRandomQuote();
-            quote_textview.setText("\"" + quote.getQuoteString() + "\"");
-            author_textview.setText("-" + quote.getAuthor());
+            case R.id.b_next:
+                quote = Quote.getRandomQuote();
+                quote_textview.setText("\"" + quote.getQuoteString() + "\"");
+                author_textview.setText("-" + quote.getAuthor());
+                break;
+            case R.id.ib_upVote:
+                quote.addWeight(1);
+                Toast.makeText(this, "new weight: " + Integer.toString(quote.getWeight()), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.ib_downvote:
+                quote.addWeight(-1);
+                Toast.makeText(this, "new weight: " + Integer.toString(quote.getWeight()), Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 }
