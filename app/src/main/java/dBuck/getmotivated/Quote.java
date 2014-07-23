@@ -66,6 +66,22 @@ public class Quote {
         new Quote("Go confidently in the direction of your dreams. Live the life you have imagined.", "Henry David Thoreau");
         new Quote("To argue with a person that has renounced the use of reason is like administering medicine to the dead.", "Thomas Paine");
         new Quote("To be upset over what you don't have is to waste what you do have.", "Ken S. Keyes Jr.");
+        new Quote("In order to succeed, we must first believe that we can.", "Nikos Kazantzakis");
+        new Quote("If you can dream it, you can do it.", "Walk Disney");
+        new Quote("Even if you fall on your face, you're still moving forward.", "Victor Kiam");
+        new Quote("By failing to prepare, you are preparing to fail.", "Benjamin Franklin");
+        new Quote("I don't believe you have to be better than everybody else. I believe you have to be better than you ever thought you could be.", "Ken Venturi");
+        new Quote("Change your life today. Don't gamble on the future, act now, without delay.", "Simone de Beauvoir");
+        new Quote("Don't watch the clock; do what it does. Keep going.", "Sam Levenson");
+        new Quote("If your going through hell, keep going.", "Winston Churchill");
+        new Quote("Without hard work, nothing grows but weeds.", "Gordon B. Hinckley");
+        new Quote("Be miserable. Or motivate yourself. Whatever has to be done, it's always your choice.", "Wayne Dyer");
+        new Quote("The secret of getting ahead is getting started.", "Mark Twain");
+        new Quote("The key is to keep company only with people who uplift you, whose presence calls forth your best.", "Epictetus");
+        new Quote("Quality is not an act, it is a habit.", "Aristotle");
+        new Quote("Setting goals is the first step in turning the invisible into the visible.", "Tony Robbins");
+        new Quote("I'd rather attempt to do something great and fail than to attempt to do nothing and succeed.", "Robert H. Schuller");
+        new Quote("Well done is better than well said.", "Benjamin Franklin");
     }
 
     public static List getAllQuotes() { return quotes; }
