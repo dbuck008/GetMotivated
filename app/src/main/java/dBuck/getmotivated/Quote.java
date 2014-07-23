@@ -82,6 +82,42 @@ public class Quote {
         new Quote("Setting goals is the first step in turning the invisible into the visible.", "Tony Robbins");
         new Quote("I'd rather attempt to do something great and fail than to attempt to do nothing and succeed.", "Robert H. Schuller");
         new Quote("Well done is better than well said.", "Benjamin Franklin");
+        new Quote("You can never quit. Winners never quit, and quitters never win.", "Ted Turner");
+        new Quote("What you do today can improve all your tomorrows.", "Ralph Marston");
+        new Quote("The harder the conflict, the more glorious the triumph", "Thomas Paine");
+        new Quote("The first step toward success is taken when you refuse to be a captive of the environment in which you first find yourself.", "Mark Caine");
+        new Quote("Set your goals high, and don't stop till you get there.", "Bo Jackson");
+        new Quote("If you want to conquer fear, don't sit home and think about it. Go out and get busy.", "Dale Carnegie");
+        new Quote("Act as if what you do makes a difference. It does.", "William James");
+        new Quote("You can't build a reputation on what you are going to do.", "Henry Ford");
+        new Quote("Always desire to learn something useful.", "Sophocles");
+        new Quote("Only I can change my life. No one can do it for me.", "Carol Burnett");
+        new Quote("The people who influence you are the people who believe in you.", "Henry Drummond");
+        new Quote("You can't wait for inspiration. You have to go after it with a club.", "Jack London");
+        new Quote("The hardships that I encountered in the past will help me succeed in the future.", "Phillip Emeagwali");
+        new Quote("Small deeds done are better than great deeds planned.", "Peter Marshal");
+        new Quote("Go for it now. The future is promised to no one.", "Wayne Dyer");
+        new Quote("Never give in and never give up.", "Hubert H. Humphrey");
+        new Quote("If you think you can do it, you can.", "John Burroughs");
+        new Quote("We make the world we live in and shape our own environment.", "Orison Swett Marden");
+        new Quote("Never complain and never explain.", "Benjamin Disraeli");
+        new Quote("Only the educated are free.", "Epictetus");
+        new Quote("The wise does at once what the fool does at last.", "Baltasar Gracian");
+        new Quote("Fear cannot be without hope nor hope without fear.", "Baruch Spinoza");
+        new Quote("When one must, one can.", "Charlotte Whitton");
+        new Quote("It is during our darkest moments that we must focus to see the light.", "Aristotle Onassis");
+        new Quote("Nothing is impossible, the word itself says 'I'm possible'!", "Audrey Hepburn");
+        new Quote("Don't judge each day by the harvest you reap but by the seeds that you plant.", "Robert Louis Stevenson");
+        new Quote("I can't change the direction of the wind, but I can adjust my sails to always reach my destination.", "Jimmy Dean");
+        new Quote("Change your thoughts and you change your world.", "Norman Vincent Peale");
+        new Quote("Believe you can and you're halfway there.", "Theodore Roosevelt");
+        new Quote("I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.'", "Muhammad Ali");
+        new Quote("Happiness resides not in possessions, and not in gold, happiness dwells in the soul.", "Democritus");
+        new Quote("We can't help everyone, but everyone can help someone.", "Ronald Reagan");
+        new Quote("The best way out is always through.", "Robert Frost");
+        new Quote("Your present circumstances don't determine where you can go; they merely determine where you start.");
+        new Quote("With self-discipline msot anything is possible.", "Theodore Roosevelt");
+        new Quote("Don't let the fear of striking out hold you back.", "Babe Ruth");
     }
 
     public static List getAllQuotes() { return quotes; }
