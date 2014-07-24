@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
@@ -16,8 +15,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     TextView quote_textview;
     TextView author_textview;
     Button next_button;
-    ImageButton upVote_imagebutton;
-    ImageButton downVote_imagebutton;
+    ImageButton favorite_button;
+    Button share_button;
     Quote quote;
 
     @Override
@@ -29,14 +28,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     public void init()
     {
-        Quote.initQuotes();
         quote_textview = (TextView) findViewById(R.id.tv_quote);
         author_textview =(TextView) findViewById(R.id.tv_author);
         next_button = (Button) findViewById(R.id.b_next);
-        upVote_imagebutton = (ImageButton) findViewById(R.id.ib_upVote);
-        downVote_imagebutton = (ImageButton) findViewById(R.id.ib_downvote);
-        upVote_imagebutton.setOnClickListener(this);
-        downVote_imagebutton.setOnClickListener(this);
+        favorite_button = (ImageButton) findViewById(R.id.b_favorite);
+        share_button = (Button) findViewById(R.id.b_share);
+        favorite_button.setOnClickListener(this);
+        share_button.setOnClickListener(this);
         next_button.setOnClickListener(this);
         Quote quote = Quote.getRandomQuote();
         quote_textview.setText("\"" + quote.getQuoteString() + "\"");
@@ -75,13 +73,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 quote_textview.setText("\"" + quote.getQuoteString() + "\"");
                 author_textview.setText("-" + quote.getAuthor());
                 break;
-            case R.id.ib_upVote:
-                quote.addWeight(1);
-                Toast.makeText(this, "new weight: " + Integer.toString(quote.getWeight()), Toast.LENGTH_SHORT).show();
+            case R.id.b_favorite:
                 break;
-            case R.id.ib_downvote:
-                quote.addWeight(-1);
-                Toast.makeText(this, "new weight: " + Integer.toString(quote.getWeight()), Toast.LENGTH_SHORT).show();
+            case R.id.b_share:
                 break;
         }
     }

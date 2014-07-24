@@ -33,36 +33,33 @@
         android:textStyle="bold" />
 
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:src="@drawable/ic_action_refresh"
         android:id="@+id/b_next"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        style="@style/Button"/>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ib_upVote"
-        android:src="@drawable/item_add"
-        android:layout_alignTop="@+id/b_next"
+        android:id="@+id/b_favorite"
+        android:src="@drawable/ic_action_star"
+        style="@style/Button"
+        android:layout_alignBottom="@+id/b_next"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp" />
+        android:layout_alignTop="@+id/b_next" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ib_downvote"
-        android:src="@drawable/item_delete"
-        android:layout_alignRight="@+id/tv_author"
-        android:layout_alignEnd="@+id/tv_author"
-        android:layout_marginRight="26dp"
-        android:layout_alignBottom="@+id/ib_upVote"
-        android:layout_alignTop="@+id/ib_upVote" />
+        android:id="@+id/b_share"
+        android:src="@drawable/ic_action_share"
+        style="@style/Button"
+        android:layout_alignTop="@+id/b_next"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/b_next" />
 
 </RelativeLayout>

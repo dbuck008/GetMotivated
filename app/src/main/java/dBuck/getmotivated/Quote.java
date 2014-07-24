@@ -29,7 +29,7 @@ public class Quote {
         new Quote(q, "Unknown");
     }
 
-    public static void initQuotes()
+    static
     {
         new Quote("Asking dumb questions is easier than fixing dumb mistakes.", "Madison Buck");
         new Quote("Success in not final, failure is not fatal: it is the courage to continue that counts.", "Winston Churchill");
