@@ -50,9 +50,8 @@ public class Main extends ActionBarActivity
         switch(position)
         {
             case 0:
-                QuoteFragment q = new QuoteFragment();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, q)
+                        .replace(R.id.container, new QuoteFragment())
                         .commit();
                 break;
             case 1:

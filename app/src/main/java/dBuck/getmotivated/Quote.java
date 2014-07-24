@@ -129,6 +129,18 @@ public class Quote {
         return quotes.get(num);
     }
 
+    public static List<Quote> getFavoriteQuotes(){
+        List<Quote> favorites = new ArrayList<Quote>();
+        for(Quote q : quotes)
+        {
+            if(q.getWeight() == 1)
+            {
+                favorites.add(q);
+            }
+        }
+        return favorites;
+    }
+
     public String getAuthor() { return this.author; }
 
     public String getQuoteString() { return this.quote; }
