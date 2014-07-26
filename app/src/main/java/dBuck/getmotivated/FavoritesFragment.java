@@ -1,7 +1,9 @@
 package dBuck.getmotivated;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 //TODO: populate the listview with all quotes that have a weight of 1
-public class FavoritesFragment extends Fragment {
+public class FavoritesFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.favorites_fragment, container, false);
-        ListView listView = (ListView) view.findViewById(android.R.id.list);
+        /*ListView listView = (ListView) view.findViewById(android.R.id.list);*/
         final List<Quote> listFavorites = new ArrayList<Quote>(Quote.getFavoriteQuotes());
         final ArrayAdapter<Quote> arrayAdapter = new ArrayAdapter<Quote>(view.getContext(), R.layout.display_quotes_fragment_list_items, R.id.fav_frag_quote, listFavorites){
             @Override
@@ -36,7 +38,8 @@ public class FavoritesFragment extends Fragment {
                 return view;
             }
         };
-        listView.setAdapter(arrayAdapter);
+        //listView.setAdapter(arrayAdapter);
+        setListAdapter(arrayAdapter);
         return view;
     }
 
