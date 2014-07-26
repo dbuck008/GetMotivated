@@ -14,19 +14,26 @@ public class Quote {
     private static List<Quote> quotes = new ArrayList<Quote>();
     private String quote = "";
     private String author = "";
+    private String category = "";
     private int weight = 0;
 
-    public Quote(String q, String a) {
+    public Quote(String q, String a, String c) {
         q = q.trim().replace("\"", "'");
         if(!(q.endsWith(".") || q.endsWith("!") || q.endsWith("?") || q.endsWith("'"))) { q = q + "."; }
-        quote = q;
+        quote = "\"" + q + "\"";
         author = a;
+        category = c;
         if(!q.isEmpty() && !a.isEmpty()) { quotes.add(this); }
     }
 
     public Quote(String q)
     {
-        new Quote(q, "Unknown");
+        new Quote(q, "Unknown", "");
+    }
+
+    public Quote(String q, String a)
+    {
+        new Quote(q, a, "");
     }
 
     static
@@ -67,7 +74,7 @@ public class Quote {
         new Quote("To argue with a person that has renounced the use of reason is like administering medicine to the dead.", "Thomas Paine");
         new Quote("To be upset over what you don't have is to waste what you do have.", "Ken S. Keyes Jr.");
         new Quote("In order to succeed, we must first believe that we can.", "Nikos Kazantzakis");
-        new Quote("If you can dream it, you can do it.", "Walk Disney");
+        new Quote("If you can dream it, you can do it.", "Walt Disney");
         new Quote("Even if you fall on your face, you're still moving forward.", "Victor Kiam");
         new Quote("By failing to prepare, you are preparing to fail.", "Benjamin Franklin");
         new Quote("I don't believe you have to be better than everybody else. I believe you have to be better than you ever thought you could be.", "Ken Venturi");
@@ -116,7 +123,7 @@ public class Quote {
         new Quote("We can't help everyone, but everyone can help someone.", "Ronald Reagan");
         new Quote("The best way out is always through.", "Robert Frost");
         new Quote("Your present circumstances don't determine where you can go; they merely determine where you start.");
-        new Quote("With self-discipline msot anything is possible.", "Theodore Roosevelt");
+        new Quote("With self-discipline most anything is possible.", "Theodore Roosevelt");
         new Quote("Don't let the fear of striking out hold you back.", "Babe Ruth");
     }
 
@@ -146,6 +153,8 @@ public class Quote {
     public String getQuoteString() { return this.quote; }
 
     public int getWeight() { return this.weight; }
+
+    public String getCategory() { return this.category; }
 
     public void addWeight(int change) { this.weight += change; }
 

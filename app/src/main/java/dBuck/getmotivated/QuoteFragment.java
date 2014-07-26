@@ -1,6 +1,8 @@
 package dBuck.getmotivated;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -76,7 +78,7 @@ public class QuoteFragment extends Fragment implements View.OnClickListener{
     private void getNewQuote()
     {
         quote = Quote.getRandomQuote();
-        quote_textview.setText("\"" + quote.getQuoteString() + "\"");
+        quote_textview.setText(quote.getQuoteString());
         author_textview.setText("-" + quote.getAuthor());
         if(quote.getWeight() == 1) {
             favorite_button.setColorFilter(Color.YELLOW);

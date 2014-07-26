@@ -1,11 +1,14 @@
 package dBuck.getmotivated;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,32 +63,20 @@ public class Main extends ActionBarActivity
                         .commit();
                 break;
             case 2:
+                Intent i = new Intent(this, Search.class);
+                startActivity(i);
                 break;
             case 3:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FavoritesFragment())
+                        .commit();
                 break;
             case 4:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FavoritesFragment())
+                        .commit();
                 break;
             case 5:
-                break;
-        }
-    }
-
-    public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_section1);
-                break;
-            case 2:
-                mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
-                break;
-            case 4:
-                mTitle = getString(R.string.title_section4);
-                break;
-            case 5:
-                mTitle = getString(R.string.title_section5);
                 break;
         }
     }
@@ -97,7 +88,6 @@ public class Main extends ActionBarActivity
         actionBar.setTitle(mTitle);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
@@ -105,6 +95,8 @@ public class Main extends ActionBarActivity
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
             getMenuInflater().inflate(R.menu.main, menu);
+            MenuItem searchItem = menu.findItem(R.id.search);
+            SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
             restoreActionBar();
             return true;
         }
@@ -116,9 +108,10 @@ public class Main extends ActionBarActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch(item.getItemId())
+        {
+            case R.id.search:
+                return false;
         }
         return super.onOptionsItemSelected(item);
     }

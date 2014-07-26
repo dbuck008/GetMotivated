@@ -31,5 +31,7 @@
         <item>@drawable/ic_dialog_info</item>
     </array>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_search">Search</string>
 
 </resources>

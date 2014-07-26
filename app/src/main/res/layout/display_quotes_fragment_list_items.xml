@@ -2,20 +2,33 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="5dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:text="quote"
-        android:id="@+id/fav_frag_quote" />
+        android:id="@+id/fav_frag_quote"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Category"
+        android:layout_below="@id/fav_frag_quote"
+        android:id="@+id/fav_frag_cat"
+        android:textColor="#919191"
+        android:layout_gravity="right" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="author"
+        android:text="Author"
+        android:textColor="#919191"
         android:layout_below="@id/fav_frag_quote"
         android:id="@+id/fav_frag_author"
         android:layout_gravity="right" />
