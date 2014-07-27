@@ -15,7 +15,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO: populate the listview with all quotes that have a weight of 1
 public class FavoritesFragment extends ListFragment {
 
     @Override

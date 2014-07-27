@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="dBuck.getmotivated.Main" >
 
-    <item android:id="@+id/search"
-        android:title="Search"
-        android:icon="@drawable/abc_ic_search"
-        app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="android.support.v7.widget.SearchView"/>
-
     <item android:id="@+id/action_example"
         android:title="About"
         android:orderInCategory="100"

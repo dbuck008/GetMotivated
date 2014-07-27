@@ -1,19 +1,14 @@
 package dBuck.getmotivated;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
 import dBuck.getmotivated.NavigationDrawer.NavigationDrawerFragment;
@@ -34,7 +29,7 @@ public class Main extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.main_nav_drawer);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -56,29 +51,28 @@ public class Main extends ActionBarActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new QuoteFragment())
                         .commit();
+                mTitle = "Quotsy";
                 break;
             case 1:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FavoritesFragment())
                         .commit();
+                mTitle = "Favorites";
                 break;
             case 2:
-                Intent i = new Intent(this, Search.class);
-                startActivity(i);
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FavoritesFragment())
+                        .commit();
+                mTitle = "Search";
                 break;
             case 3:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, new FavoritesFragment())
+                        .replace(R.id.container, new About())
                         .commit();
-                break;
-            case 4:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, new FavoritesFragment())
-                        .commit();
-                break;
-            case 5:
+                mTitle = "About";
                 break;
         }
+        restoreActionBar();
     }
 
     public void restoreActionBar() {
@@ -88,7 +82,7 @@ public class Main extends ActionBarActivity
         actionBar.setTitle(mTitle);
     }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
@@ -101,9 +95,9 @@ public class Main extends ActionBarActivity
             return true;
         }
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 
-    @Override
+/*    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -114,6 +108,7 @@ public class Main extends ActionBarActivity
                 return false;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
+
 
 }

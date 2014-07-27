@@ -68,7 +68,7 @@ public class QuoteFragment extends Fragment implements View.OnClickListener{
             case R.id.b_share:
                 Intent i = new Intent();
                 i.setAction(Intent.ACTION_SEND);
-                i.putExtra(Intent.EXTRA_TEXT, quote.getQuoteString() + "\n" + "-" + quote.getAuthor());
+                i.putExtra(Intent.EXTRA_TEXT, quote.getQuoteString() + "\n" + "-" + quote.getAuthor() + "\nSent by Quotsy");
                 i.setType("text/plain");
                 startActivity(i);
                 break;
